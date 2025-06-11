@@ -22,7 +22,6 @@ const handler = async (msg, { conn }) => {
 ★ Hentai/Furry
 ★ Transexual
 ★ Porno normal
-★ Lolis (solo estilo de dibujo/animado)
 
 *_❌|CONTENIDO PROHIBIDO_*
 ✦ Earfuck
@@ -32,6 +31,7 @@ const handler = async (msg, { conn }) => {
 ✦ Gore
 ✦ Vore
 ✦ CP (Child Porn)
+✦ Lolis
 ✦ Toddler (Relación con bebés) 
 
 ⭐| Recuerda que la temática tiene que ser más de Futanari.`;
