@@ -31,7 +31,7 @@ const handler = async (msg, { conn }) => {
 ✦ Gore
 ✦ Vore
 ✦ CP (Child Porn)
-✦ Lolis
+✦ Lolis/Shotas
 ✦ Toddler (Relación con bebés) 
 
 ⭐| Recuerda que la temática tiene que ser más de Futanari.`;
