@@ -23,7 +23,6 @@ const handler = async (msg, { conn }) => {
 ★ Transexual
 ★ Porno normal
 
-
 *_❌|CONTENIDO PROHIBIDO_*
 ✦ Earfuck
 ✦ Scat
