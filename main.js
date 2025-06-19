@@ -99,9 +99,9 @@ const configFilePath = "./config.json";
 function loadPrefix() {
     if (fs.existsSync(configFilePath)) {
         let configData = JSON.parse(fs.readFileSync(configFilePath, "utf-8"));
-        global.prefix = configData.prefix || "/";
+        global.prefix = configData.prefix || "!";
     } else {
-        global.prefix = "/";
+        global.prefix = "!";
     }
 }
 loadPrefix();
