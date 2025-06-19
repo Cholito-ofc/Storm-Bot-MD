@@ -35,6 +35,17 @@ const handler = async (msg, { conn, text }) => {
     const video = search.videos[0];
     if (!video) throw new Error('No se encontraron resultados');
 
+    // Verificar duración máxima
+    const timestamp = video.timestamp; // Ej: "3:25" o "1:10:45"
+    const timeParts = timestamp.split(':').map(Number).reverse();
+    const durationMinutes = (timeParts[0] || 0) / 60 + (timeParts[1] || 0) + (timeParts[2] || 0) * 60;
+
+    if (durationMinutes > 10) {
+      return await conn.sendMessage(msg.key.remoteJid, {
+        text: `❌ *Duración excedida:*\nEste video dura más de *10 minutos* (${timestamp}).\nPor favor elige otro más corto.`
+      }, { quoted: msg });
+    }
+
     const videoUrl = video.url;
     const thumbnail = video.thumbnail;
     const title = video.title;
@@ -44,7 +55,7 @@ const handler = async (msg, { conn, text }) => {
 
     const infoMessage = `
 ╔═══════════════╗
-   ✦ 𝗔𝘇𝘂𝗿𝗮 𝗨𝗹𝘁𝗿𝗮 & 𝘾𝙤𝙧𝙩𝙖𝙣𝙖 𝗦𝘂𝗯𝗯𝗼𝘁 ✦
+   ✦ 𝗔𝘇𝘂𝗿𝗮 𝗨𝗹𝘁𝗿𝗮 2.0 𝗦𝘂𝗯𝗯𝗼𝘁 ✦
 ╚═══════════════╝
 
 📀 *Info del audio:*  

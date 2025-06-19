@@ -7,7 +7,7 @@ const handler = async (msg, { conn }) => {
 
   // Leer subbots conectados
   const subDirs = fs.existsSync(subbotsFolder)
-    ? fs.readdirSync(subbotsFolder).filter(d => 
+    ? fs.readdirSync(subbotsFolder).filter(d =>
         fs.existsSync(path.join(subbotsFolder, d, "creds.json"))
       )
     : [];
@@ -28,7 +28,10 @@ const handler = async (msg, { conn }) => {
 
   // Generar lista de subbots
   const total = subDirs.length;
+  const maxSubbots = 100;
+  const disponibles = maxSubbots - total;
   const mentions = [];
+
   const lista = subDirs.map((dir, i) => {
     const jid = dir.split("@")[0];
     const fullJid = `${jid}@s.whatsapp.net`;
@@ -39,7 +42,12 @@ const handler = async (msg, { conn }) => {
   }).join("\n\n");
 
   // Construir mensaje final
-  const menu = `╭━〔 *AZURA ULTRA 2.0* 〕━⬣\n│  🤖 Subbots Conectados\n│  Total: *${total}*\n╰━━━━━━━━━━━━⬣\n\n${lista}`;
+  const menu = `╭━〔 *AZURA ULTRA 2.0* 〕━⬣
+│ 🤖 Total conectados: *${total}/${maxSubbots}*
+│ 🟢 Sesiones libres: *${disponibles}*
+╰━━━━━━━━━━━━⬣
+
+${lista}`;
 
   // Enviar usando sendMessage2
   await conn.sendMessage2(

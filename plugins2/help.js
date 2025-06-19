@@ -19,7 +19,7 @@ const handler = async (msg, { conn }) => {
   });
 
   const menu = `
-╔⌬AZURA & CORTANA SUBBOT⌬╗
+╔⌬ AZURA Ultra 2.0 SUBBOT⌬╗
 ║   Menú por categorías  
 ╚═──────────────────═╝
 
@@ -68,14 +68,20 @@ const handler = async (msg, { conn }) => {
 ⟢ ${usedPrefix}tagall / ${usedPrefix}invocar / ${usedPrefix}todos
 ⟢ ${usedPrefix}infogrupo
 ⟢ ${usedPrefix}damelink
+⟢ ${usedPrefix}antidelete on o off
 
 〔 Comandos De Juegos 〕
 ⟢ ${usedPrefix}verdad
 ⟢ ${usedPrefix}reto
 ⟢ ${usedPrefix}memes o meme
+⟢ ${usedPrefix}kiss
+⟢ ${usedPrefix}topkiss
+⟢ ${usedPrefix}slap
+⟢ ${usedPrefix}topslap
 
 〔 Configuración & Dueño 〕
 
+▣ ${usedPrefix}antideletepri on o off
 ▣ ${usedPrefix}setprefix ↷
   Cambiar prefijo del subbot
 ▣ ${usedPrefix}creador ↷
@@ -90,20 +96,20 @@ const handler = async (msg, { conn }) => {
   Quitar usuario autorizado pa que o lo usen.
 ▣ ${usedPrefix}delgrupo ↷
   Eliminar grupo autorizado pa que no lo usen.
-▣ ${usedPrefix}pong ↷
+▣ ${usedPrefix}ping ↷
   Medir latencia del bot
 
-═⌬Azura Ultra & cortana Subbot⌬═`;
+═⌬Azura Ultra 2.0 Subbot⌬═`;
 
   // Mensaje principal con sendMessage2
-  await conn.sendMessage2(
-    msg.key.remoteJid,
-    {
-      image: { url: `https://cdn.russellxz.click/d06910d4.PNG` },
-      caption: menu
-    },
-    msg
-  );
+  await conn.sendMessage(
+  msg.key.remoteJid,
+  {
+    image: { url: `https://cdn.russellxz.click/76faa1fa.jpeg` },
+    caption: menu
+  },
+  { quoted: msg }
+);
 
   // Reacción final normal (no cambia)
   await conn.sendMessage(msg.key.remoteJid, {

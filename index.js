@@ -1,6 +1,6 @@
 (async () => {
 let canalId = ["120363266665814365@newsletter"];  
-let canalNombre = ["👾 AZURA ULTRA CHANNEL 👾"]
+let canalNombre = ["👾 AZURA ULTRA 2.0 BOT 👾"]
   function setupConnection(conn) {
   conn.sendMessage2 = async (chat, content, m, options = {}) => {
     const firstChannel = { 
@@ -81,6 +81,7 @@ async function perplexityQuery(q, prompt) {
   //lumi
   const axios = require("axios");
 const fetch = require("node-fetch");
+const { cargarSubbots } = require("./indexsubbots");
 
     const { default: makeWASocket, useMultiFileAuthState, fetchLatestBaileysVersion, makeCacheableSignalKeyStore } = require("@whiskeysockets/baileys");
     const chalk = require("chalk");
@@ -223,7 +224,12 @@ setInterval(async () => {
             }
 
 // Ruta de los archivos a limpiar
-const archivosAntidelete = ['./antidelete.json', './antideletepri.json'];
+const archivosAntidelete = [
+  './antidelete.json',
+  './antideletepri.json',
+  './gruposu.json',
+  './prisu.json'
+];
 
 function limpiarAntidelete() {
   for (const archivo of archivosAntidelete) {
@@ -241,7 +247,8 @@ setInterval(limpiarAntidelete, 30 * 60 * 1000); // 30 min
 limpiarAntidelete();
 //cada 30 minutos antidelete          
           
-// Función para revisar y actualizar grupos cada 5 segundos
+
+          // Función para revisar y actualizar grupos cada 5 segundos
 setInterval(async () => {
   try {
     const ahora = Date.now();
@@ -1423,7 +1430,7 @@ try {
 
 const path = require("path");
             
-async function cargarSubbots() {
+/*async function cargarSubbots() {
   const subbotFolder = "./subbots";
   const path = require("path");
   const fs = require("fs");
@@ -1756,7 +1763,7 @@ if (isGroup && !isFromSelf) {
   }
 }
 
-/*async function joinChannels(sock) {
+async function joinChannels(sock) {
 for (const channelId of Object.values(global.ch)) {
 await sock.newsletterFollow(channelId).catch(() => {})
 }}
@@ -1764,11 +1771,11 @@ await sock.newsletterFollow(channelId).catch(() => {})
 async function joinChannels2(subSock) {
 for (const channelId of Object.values(global.ch)) {
 await subSock.newsletterFollow(channelId).catch(() => {})
-}}*/
+}}
 
 // Ejecutar después de iniciar el bot principal
 setTimeout(cargarSubbots, 7000);
-module.exports = { cargarSubbots };
+module.exports = { cargarSubbots };*/
             
             sock.ev.on("creds.update", saveCreds);
 
@@ -1789,4 +1796,16 @@ module.exports = { cargarSubbots };
     }
 
     startBot();
+  /* ── Reinicio automático cada 3 h ───────────────────────── */
+const THREE_HOURS = 3 * 60 * 60 * 1000;   // 10 800 000 ms
+
+function autoRestart() {
+  setTimeout(() => {
+    console.log("🔄  Reinicio automático (3 h transcurridas)…");
+    process.exit(1);                      // el panel/PM2 lo relanza
+  }, THREE_HOURS);
+}
+
+autoRestart();    // programa el primer ciclo
+/* ───────────────────────────────────────────────────────── */
 })();
