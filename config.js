@@ -13,41 +13,18 @@ if (!fs.existsSync(configFilePath)) {
 const config = JSON.parse(fs.readFileSync(configFilePath, "utf-8"));
 
 // 🔥 Prefijo global desde archivo de configuración
-global.prefix = config.prefix || ".";
+global.prefix = config.prefix || "/";
 
 // Lista de Owners
 global.owner = [
-    ["15167096032", "Owner", true],
-    ["115724051816605"],
-    ["5491151545427"],
-    ["595986172767"],
-    ["507660673766"],
-    ["50768888457"],
-    ["584125778026"],
-    ["5492266613038"],
-    ["584123552078"],
-    ["573242402359"],
-    ["5217294888993"],
-    ["5214437863111"],
-    ["51906662557"],
-    ["50582340051"],
-    ["5217441298510"],
-    ["5491155983299"],
-    ["5493795319022"],
-    ["5217821153974"],
-    ["584163393168"],
-    ["16475584916"],
-    ["5216865268215"],
-    ["5215639850287"],
-    ["15167096032"],
-    ["525639850287"]
+    ["5492604849203", "Owner", true],
+    ["5492604631960"]
 ];
 
 
 // ✅ Lista de prefijos permitidos
 global.allowedPrefixes = [
-    ".", "!", "#", "?", "-", "+", "*", "~", "$", "&", "%", "=", "🔥", "💀", "✅", "🥰",
-    "💎", "🐱", "🐶", "🌟", "🎃", "🍕", "🍔", "🍑", "🛠️", "📌", "⚡", "🚀", "👀", "💡", "💣", "💯", "😎", "☠️", "👾"
+    ".", "/"
 ];
 
 global.modoPrivado = false; // El modo privado está desactivado por defecto
@@ -79,12 +56,6 @@ global.reto = ["comer 2 cucharadas de arroz sin guarniciones, si se está arrast
 global.ch = {
 ch1: '120363266665814365@newsletter', //AzuraUltra
 ch2: '120363301598733462@newsletter', //SkyUltraPlus 
-ch3: '120363160031023229@newsletter', //Infinity-Wa
-ch4: '120363374372683775@newsletter', //🌹 Pσҽƚιx ✨ Sƚҽʅʅαɾ 😎 Fυɳ
-ch5: '120363343811229130@newsletter', //◟𖥻🗿៹┊My Honest Reaction
-ch6: '120363418194182743@newsletter', //𝐊𝐮𝐫𝐨𝐭𝐚𝐤𝐚-𝐌𝐃
-ch7: '120363307551724976@newsletter', //🪼 FRASES, MEMES Y CONSEJOS PARA TUS ESTADOS 🪼
-ch8: '120363385983031660@newsletter', //🐼 Evolution App
 }
 
 //------------------------------------------------

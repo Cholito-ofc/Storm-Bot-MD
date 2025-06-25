@@ -48,8 +48,8 @@ const handler = async (msg, { conn }) => {
     for await (const chunk of mediaStream) buffer = Buffer.concat([buffer, chunk]);
 
     const metadata = {
-      packname: `✨ Lo Mandó Hacer: ${senderName} ✨`,
-      author: `🤖 Bot Creador: Azura Ultra 2.0 Subbot\n🛠️ Desarrollado por: 𝙍𝙪𝙨𝙨𝙚𝙡𝙡 xz 💻\n${fechaCreacion}`
+      packname: `Sticker`,
+      author: `ᴀꜱᴀᴋᴜʀᴀ ᴍᴀᴏ ʙᴏᴛ 👑`
     };
 
     const sticker = mediaType === 'image'
